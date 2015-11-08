@@ -84,12 +84,14 @@ blockquote {
 }
 .wrapper {
   width: 100%;
+  float: left;
+  clear: left;
+  padding: 60px 0;
 }
 .wrapper .inner {
   width: 90%;
   max-width: 960px;
   margin: 0 auto;
-  padding: 60px 0;
 }
 .primary, .secondary {
   float: left;
@@ -97,11 +99,12 @@ blockquote {
   margin-bottom: 40px;
 }
 .secondary {
-  margin-bottom: 60px;
+  margin-bottom: 0;
 }
 @media screen and (min-width: 768px) {
   .primary {
     width: 50%;
+    margin-bottom: 0;
   }
   .secondary {
     width: 35%;
@@ -116,8 +119,58 @@ blockquote {
 /* -- header -- */
 .header-wrapper {
   border-top: 4px solid #d02f2f;
-  min-height: 100px;
 }
+@media screen and (max-width: 767px) {
+  .header-wrapper {
+    padding-bottom: 20px;
+  }
+
+}
+
+/* ---- navigation ---- */
+
+.nav {
+  float: none;
+}
+.nav ul {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.nav ul li {
+  display: inline-block;
+  float: none;
+  width: auto;
+  font-size: 0;
+}
+.nav ul li a {
+  display: block;
+  padding: 0 10px;
+  color: #9a9a9a;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-family: "freight-sans-pro",sans-serif;
+  font-size: 16px;
+}
+.nav ul li a:hover {
+  color: #000;
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    float: right;
+    width: 50%;
+  }
+  .nav ul {
+    text-align: right;
+  }
+  .nav ul li a{
+     padding: 0 20px;
+  }
+  .nav ul li:last-child a {
+    padding-right: 0;
+  }
+}
+
 
 /* -- hero -- */
 .hero-wrapper {
@@ -135,14 +188,133 @@ blockquote {
 
 /* -- info1 -- */
 .info1-wrapper {
+  padding: 0;
+  display: inline-block;
+}
+.info1-wrapper .inner-primary, .info1-wrapper .inner-secondary {
+  float: left;
+  padding: 60px 0;
+  width: 100%;
+  background-image: url('../images/topography-pattern-bg.png') ;
+  background-size: 350px auto;
+  background-blend-mode: multiply;
+}
+.info1-wrapper .inner-primary {
   background-color: #EFEFEF;
+}
+.info1-wrapper .inner-secondary {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .info1-wrapper .inner-primary, .info1-wrapper .inner-secondary {
+    min-height: 240px;
+  }
+  .info1-wrapper .inner-primary {
+    width: calc(50% + 75px);
+  }
+  .info1-wrapper .inner-secondary {
+    width: calc(50% - 75px);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 780px) {
+  .info1-wrapper .inner-primary p {
+    font-size: 15.5px;
+  }
+}
+
+.what-we-do, .clients {
+  width: 90%;
+  margin: 0 auto;
+}
+.clients li {
+  line-height: 1.75;
+}
+@media screen and (min-width: 768px) {
+  .what-we-do, .clients {
+    width: 82%;
+  }
+}
+@media screen and (min-width: 1042px) {
+  .what-we-do {
+    width: 480px;
+    margin-right: 75px;
+    float: right;
+  }
+  .clients {
+    width: 410px;
+    margin-left: 75px;
+    float: left;
+  }
+  .clients li {
+    line-height: 2;
+  }
 }
 
 /* -- images -- */
 .images-wrapper {
   border-bottom: 4px solid #d02f2f;
-  background-color: #ccc;
-  min-height: 500px;
+  padding: 0;
+}
+.images-wrapper .inner {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  padding-bottom: 50%;
+}
+.photo {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 1s;
+  transition: transform 1s;
+}
+@media screen and (min-width: 1040px) {
+  .images-wrapper .inner {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    height: 520px;
+    padding-bottom: 0;
+  }
+  .photo {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 520px;
+    padding-bottom: 0;
+  }
+}
+.back{
+  z-index: 50;
+}
+.off{
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  z-index: 150;
+}
+.front{
+  z-index: 100;
+}
+.photo1 {
+  background-color: red;
+}
+.photo2 {
+  background-color: orange;
+}
+.photo3 {
+  background-color: yellow;
+}
+.photo4 {
+  background-color: green;
+}
+.photo5 {
+  background-color: blue;
 }
 
 /* -- info2 -- */
@@ -154,6 +326,9 @@ blockquote {
 /* -- quote -- */
 .quote-wrapper {
   background-color: #d02f2f;
+  background-image: url('../images/topography-pattern-bg.png') ;
+  background-size: 350px auto;
+  background-blend-mode: multiply;
   text-align: center;
 }
 .quote-wrapper blockquote {
@@ -185,14 +360,19 @@ blockquote {
 }
 
 /* -- info3 -- */
+.info3-wrapper a {
+  text-decoration: none;
+  color: #333;
+}
 
 
 /* -- footer -- */
 .footer-wrapper {
+  padding: 10px 0;
   background-color: #333;
 }
 .footer-wrapper .inner {
-  padding: 10px 0;
+
 }
 .footer-wrapper .small {
   font-family: "freight-sans-pro",sans-serif;
@@ -200,3 +380,4 @@ blockquote {
   letter-spacing: 1px;
   color: #666;
 }
+
