@@ -119,12 +119,32 @@ blockquote {
 /* -- header -- */
 .header-wrapper {
   border-top: 4px solid #d02f2f;
+  padding: 40px 0;
 }
 @media screen and (max-width: 767px) {
   .header-wrapper {
-    padding-bottom: 20px;
+    padding: 20px 0 12px;
   }
 
+}
+.header-wrapper .branding {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 0;
+}
+.header-wrapper .branding .logo {
+  display: inline;
+  max-width: 200px;
+}
+@media screen and (min-width: 768px) {
+  .header-wrapper .branding {
+    float: left;
+    width: 50%;
+    margin: 0;
+  }
+  .header-wrapper .branding .logo {
+    max-width: 300px;
+  }
 }
 
 /* ---- navigation ---- */
@@ -162,6 +182,7 @@ blockquote {
   }
   .nav ul {
     text-align: right;
+    padding: 17.5px 0;
   }
   .nav ul li a{
      padding: 0 20px;
@@ -174,9 +195,27 @@ blockquote {
 
 /* -- hero -- */
 .hero-wrapper {
-  background-color: #ccc;
-  min-height: 300px;
+  padding: 0;
 }
+.hero-wrapper .inner {
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+.hero {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  background-color: #ccc;
+}
+@media screen and (min-width: 1040px) {
+  .hero {
+    height: 480px;
+    padding-bottom: 0;
+  }
+}
+
 
 /* -- intro -- */
 .intro-wrapper {
