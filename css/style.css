@@ -55,11 +55,11 @@ blockquote {
 }
 
 .large {
-  font-size: 26px;
+  font-size: 25px;
 }
 @media screen and (min-width: 1042px) {
   .large {
-    font-size: 36px;
+    font-size: 35px;
   }
 }
 .small {
