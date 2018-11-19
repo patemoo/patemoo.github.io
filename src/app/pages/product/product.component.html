@@ -1,0 +1,43 @@
+<article>
+  <section class="product-wrapper">
+    <image-viewer [images]="product.images"></image-viewer>
+
+    <div class="info">
+      <h1 class="title">{{product.name}}</h1>
+      <p class="price">{{product.price}}</p>
+      <p class="description">
+        {{product.description}}
+      </p>
+
+      <div class="details">
+        <button (click)="toggleDetails($event)"><h2>Details 
+          {{ showDetails ? '-' : '+' }}
+        </h2></button>
+        <div class="details-content" [class.show]="showDetails">
+          <ng-container *ngIf="product.details; else noDetails">
+            <ul>
+              <li *ngFor="let detail of product.details">{{detail}}</li>
+            </ul>
+          </ng-container>
+          <ng-template #noDetails>
+            <p>Details unavailable.</p>
+          </ng-template>
+          
+        </div>
+      </div>
+
+      <button 
+        class="add-cart"
+        (click)="addToCart()">
+          Add to cart
+      </button>
+    </div>
+  </section>
+
+  <section>
+      <h2>Similar Items</h2>
+      <section  class="similar">
+        <product-card *ngFor="let id of product.similar" [product]="products[id]"></product-card>
+      </section>
+  </section>
+</article>
